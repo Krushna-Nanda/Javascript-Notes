@@ -5,7 +5,9 @@
 
 One standard practice that is often followed in JavaScript is using `"use strict";` at the beginning of your script. While it's not mandatory, it's considered a good practice. Let's delve into why this practice is beneficial.
 
-`"use strict";` is a pragma in JavaScript that enables strict mode. Introduced in ECMAScript 5 (ES5), strict mode assists in writing safer and more robust JavaScript code by identifying common coding mistakes and preventing "silent" errors. It aims to eliminate certain types of bugs and promote better coding practices.
+`"use strict";` is a pragma in JavaScript that enables strict mode. Introduced in ECMAScript 5 (ES5),
+strict mode assists in writing safer and more robust JavaScript code byidentifying common coding mistakes and
+preventing "silent" errors. It aims to eliminatecertain types of bugs and promote better coding practices.
 
 ## Benefits of Using Strict Mode
 
