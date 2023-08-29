@@ -315,3 +315,124 @@ Because both `obj1` and `obj2` reference the same object in memory, any changes 
 For example, when you have an object assigned to a variable, that variable doesn't contain the object itself; it contains a reference to the memory address where the object's data is located. This allows you to indirectly access and manipulate the data stored in memory.
 
 So, when we talk about references in JavaScript, we are often referring to the memory addresses or pointers that enable variables to access complex data structures like objects, arrays, and functions.
+
+# String concepts in javascript
+
+In JavaScript, `` (backticks) are used to create template literals, a feature introduced in ECMAScript 6 (ES6) for creating strings with more flexibility and capabilities compared to traditional single or double quotes. Template literals allow you to embed expressions and multiline content directly within strings.
+
+Here are some key features and uses of template literals:
+
+1. **String Interpolation:** You can embed variables and expressions within a template literal using `${}` syntax. This makes it easy to combine dynamic values with static text.
+
+   Example:
+   ```javascript
+   const name = "Alice";
+   const greeting = `Hello, ${name}!`;
+   ```
+
+2. **Multiline Strings:** Template literals support multiline content without needing to use escape characters or concatenation. You can simply include line breaks within the template.
+
+   Example:
+   ```javascript
+   const multilineText = `
+   This is a multiline text.
+   It spans across multiple lines.
+   `;
+   ```
+
+3. **Expression Evaluation:** Expressions inside `${}` are evaluated and the result is inserted into the string. This can include calculations, function calls, and more.
+
+   Example:
+   ```javascript
+   const x = 10;
+   const y = 20;
+   const result = `Sum of ${x} and ${y} is ${x + y}.`;
+   ```
+
+4. **Tagged Templates:** Template literals can be "tagged" with a function that processes the template. This allows for advanced string manipulation and customization.
+
+   Example:
+   ```javascript
+   function customTag(strings, ...values) {
+     // Manipulate strings and values as needed
+     // Return the final processed string
+   }
+   const taggedResult = customTag`Hello, ${name}!`;
+   ```
+
+Template literals provide a more concise and readable way to work with strings that involve dynamic values and complex formatting. They have become an essential part of modern JavaScript development.
+
+# ----------------------------------------------------------
+
+String concatenation and string interpolation are related concepts in the realm of working with strings, but they are not the same thing. Let's clarify the difference between them:
+
+**String Concatenation**:
+String concatenation refers to the process of combining multiple strings to create a single string. This is often done using the `+` operator in JavaScript. When you concatenate strings, you join them together end-to-end to form a longer string.
+
+Example of string concatenation:
+
+```javascript
+const firstName = "John";
+const lastName = "Doe";
+const fullName = firstName + " " + lastName; // Concatenation using the + operator
+console.log(fullName); // Output: "John Doe"
+```
+
+**String Interpolation**:
+String interpolation is a technique where you embed variables or expressions directly within a string to dynamically insert their values. In JavaScript, template literals (delimited by backticks) are commonly used for string interpolation. Template literals allow you to create strings with placeholders that are replaced by the actual values of variables or expressions.
+
+Example of string interpolation using template literals:
+
+```javascript
+const firstName = "John";
+const lastName = "Doe";
+const fullName = `${firstName} ${lastName}`; // Interpolation using template literals
+console.log(fullName); // Output: "John Doe"
+```
+
+While both string concatenation and string interpolation result in the creation of a combined string, the key difference lies in the approach. String concatenation uses operators or methods to manually join strings, while string interpolation uses placeholders within a template literal to automatically insert values.
+
+String interpolation, especially using template literals, is considered more readable, efficient, and convenient, as it eliminates the need for explicit concatenation and enhances the clarity of the code.
+
+**Question:**
+When I use a primitive string value in JavaScript, I can also access string properties and methods like `toLowerCase()` and `toUpperCase()`. How is this possible?
+
+**Answer:**
+In JavaScript, when you access string properties or methods like `toLowerCase()` and `toUpperCase()` on a primitive string value, the language automatically performs a process called autoboxing. Autoboxing involves temporarily converting the primitive string value into a String object behind the scenes to allow access to properties and methods. This conversion is transparent to developers and allows you to work with string properties and methods on primitive values just as if they were objects.
+
+For example:
+```javascript
+let str = "hello";
+let upperCaseStr = str.toUpperCase(); // Autoboxing: str is temporarily converted to a String object
+console.log(upperCaseStr); // Output: "HELLO"
+```
+
+After the property or method is accessed, the temporary String object is discarded, and the original primitive string value remains unchanged. This behavior makes it more convenient to work with string methods without explicitly converting primitive values to objects. Keep in mind that this automatic conversion only happens when you access properties or methods and does not affect the original primitive value.
+
+**Question:** Hoe split method works in JavaScript?
+
+The code `myName2.split(" ")` splits the string `myName2` into an array of substrings separated by spaces. Let's break it down:
+
+```javascript
+let myName2 = "krushna chandra nanda";
+console.log(myName2.split(" "));
+```
+
+In this code:
+
+- `myName2` is a string containing the value `"krushna chandra nanda"`.
+- The `split(" ")` method is called on `myName2`. This method takes a delimiter as an argument and splits the string at each occurrence of the delimiter. In this case, the delimiter is a space `" "`.
+- The method separates the string into an array of substrings, where each substring is created by splitting the original string wherever a space is encountered.
+
+The output of `console.log(myName2.split(" "))` will be an array of substrings:
+
+```
+[ "krushna", "chandra", "nanda" ]
+```
+
+The string has been split into three substrings based on the spaces in the original string.
+
+
+
+A delimiter is a character or sequence of characters used to separate or mark different parts within a larger piece of text or data. In the context of string manipulation, delimiters are often used to split a string into smaller parts or to indicate where one piece of information ends and another begins.
+
