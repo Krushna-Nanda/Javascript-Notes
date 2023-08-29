@@ -6,7 +6,7 @@ console.log(var1, var2); // 10 20
 let obj1 = { 
     
     value: 10 ,
-    name:"krushna kumar singh"
+    name:"krushna chandra nanda"
 };
 
 let obj2 = obj1;
