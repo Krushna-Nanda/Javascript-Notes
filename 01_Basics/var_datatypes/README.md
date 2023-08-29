@@ -302,8 +302,16 @@ In summary, JavaScript handles primitive values and reference values differently
 
 **Question:** Here you may have a doubt : that "  one thing here obj1 is not the obj , its just a referc pointing to the real object crete in heap , right " Question: In JavaScript, when working with objects, is the variable name used to store an object (e.g., obj1) the actual object itself, or is it a reference pointing to the object created in memory (heap) ?
 
-Exactly, you've got it right. In JavaScript, when you create an object using an object literal like `{ value: 10, name: "krushna kumar singh" }`, what's actually happening is that you're creating an object in memory (often referred to as the heap), and the variable `obj1` is assigned a reference that points to the memory location where that object's data is stored.
+Exactly, you've got it right. In JavaScript, when you create an object using an object literal like `{ value: 10, name: "krushna chandra nanda" }`, what's actually happening is that you're creating an object in memory (often referred to as the heap), and the variable `obj1` is assigned a reference that points to the memory location where that object's data is stored.
 
-So, when you say `obj1 = { value: 10, name: "krushna kumar singh" }`, `obj1` is not the object itself; it's a reference that points to the object in memory. Similarly, when you later say `obj2 = obj1`, you're not creating a new object; you're just making `obj2` also reference the same object in memory that `obj1` is referencing.
+So, when you say `obj1 = { value: 10, name: "krushna chandra nanda" }`, `obj1` is not the object itself; it's a reference that points to the object in memory. Similarly, when you later say `obj2 = obj1`, you're not creating a new object; you're just making `obj2` also reference the same object in memory that `obj1` is referencing.
 
 Because both `obj1` and `obj2` reference the same object in memory, any changes made to the object through one reference will be reflected when accessing the object through the other reference. This is why when you modify `obj2.value`, it also affects the `obj1.value`, as they both point to the same object.
+
+**Question:** Here you may have a doubt is that , what does it mean by reference like it hold a reference to the object , what does it mean by reference , is here reference means memory address ?
+
+ When we say that variables hold references in JavaScript, we mean that they store memory addresses or pointers that point to the memory locations where the actual data is stored. In the context of JavaScript, a reference essentially acts as a way to access the data stored in a particular memory location.
+
+For example, when you have an object assigned to a variable, that variable doesn't contain the object itself; it contains a reference to the memory address where the object's data is located. This allows you to indirectly access and manipulate the data stored in memory.
+
+So, when we talk about references in JavaScript, we are often referring to the memory addresses or pointers that enable variables to access complex data structures like objects, arrays, and functions.
