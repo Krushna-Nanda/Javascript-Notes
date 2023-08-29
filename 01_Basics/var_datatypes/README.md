@@ -261,3 +261,49 @@ console.log(10 > 5 ? "Greater" : "Smaller"); // "Greater"
 ```
 
 These operators are commonly used for making decisions, performing comparisons, and evaluating conditions in JavaScript.
+
+# Memory Management in JavaScript 
+
+In the provided code, you're working with variables and objects, and it showcases the behavior of primitive values and reference values in JavaScript. Let's go through each part step by step:
+
+```javascript
+let var1 = 10;
+let var2 = var1;
+var2 = 20;
+console.log(var1, var2); // Output: 10 20
+```
+
+1. `var1` is assigned the primitive value `10`.
+2. `var2` is assigned the value of `var1`, which is `10`. At this point, `var2` holds a copy of the value stored in `var1`.
+3. `var2` is assigned the value `20`. This doesn't affect `var1` because they hold separate copies of the primitive value `10`.
+4. The `console.log` statement prints the values of `var1` and `var2`, which are `10` and `20` respectively.
+
+The primitive value (in this case, a number) is copied when assigning to another variable. Changing the value of one variable doesn't affect the other variable because they hold independent copies of the value.
+
+```javascript
+let obj1 = {
+  value: 10,
+  name: "krushna kumar singh"
+};
+
+let obj2 = obj1;
+obj2.value = 20;
+console.log(obj1.value); // Output: 20
+```
+
+1. `obj1` is assigned an object with a property `value` set to `10` and a `name` property.
+2. `obj2` is assigned the same reference as `obj1`. Both `obj1` and `obj2` now point to the same object in memory.
+3. `obj2.value` is changed to `20`. Since both `obj1` and `obj2` reference the same object, this change affects both variables.
+4. The `console.log` statement prints the value of `obj1.value`, which is now `20`.
+
+When working with objects, assigning one object variable to another doesn't create a copy of the object. Instead, both variables reference the same object in memory. Modifications made to the object through one variable will be reflected when accessed through the other variable.
+
+In summary, JavaScript handles primitive values and reference values differently. Primitive values are copied when assigned to variables, while objects are not copied; they are shared by reference. Understanding this distinction is important for predicting how changes to variables will affect the underlying data.
+
+**Question:** Here you may have a doubt : that "  one thing here obj1 is not the obj , its just a referc pointing to the real object crete in heap , right " Question: In JavaScript, when working with objects, is the variable name used to store an object (e.g., obj1) the actual object itself, or is it a reference pointing to the object created in memory (heap) ?
+
+Exactly, you've got it right. In JavaScript, when you create an object using an object literal like `{ value: 10, name: "krushna kumar singh" }`, what's actually happening is that you're creating an object in memory (often referred to as the heap), and the variable `obj1` is assigned a reference that points to the memory location where that object's data is stored.
+
+So, when you say `obj1 = { value: 10, name: "krushna kumar singh" }`, `obj1` is not the object itself; it's a reference that points to the object in memory. Similarly, when you later say `obj2 = obj1`, you're not creating a new object; you're just making `obj2` also reference the same object in memory that `obj1` is referencing.
+
+Because both `obj1` and `obj2` reference the same object in memory, any changes made to the object through one reference will be reflected when accessing the object through the other reference. This is why when you modify `obj2.value`, it also affects the `obj1.value`, as they both point to the same object.
