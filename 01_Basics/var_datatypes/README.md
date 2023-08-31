@@ -262,6 +262,37 @@ console.log(10 > 5 ? "Greater" : "Smaller"); // "Greater"
 
 These operators are commonly used for making decisions, performing comparisons, and evaluating conditions in JavaScript.
 
+In JavaScript, both `==` (equality operator) and `===` (strict equality operator) are used for comparison, but they have different behaviors and use cases.
+
+1. **Equality Operator (`==`):**
+   The equality operator `==` is used to compare values for equality, allowing for type coercion. Type coercion means that JavaScript will attempt to convert the values to the same type before making the comparison. This can lead to unexpected results in some cases. Here's how it works:
+
+   ```javascript
+   console.log(5 == "5"); // true (because of type coercion)
+   console.log(true == 1); // true (because of type coercion)
+   console.log(null == undefined); // true
+   ```
+
+   While type coercion can be helpful in some situations, it can also lead to confusion and bugs. As a result, it's generally recommended to use the strict equality operator for most comparisons.
+
+2. **Strict Equality Operator (`===`):**
+   The strict equality operator `===` compares both the values and the types of the operands without performing any type coercion. It returns `true` if both the values and types are the same, and `false` otherwise. This operator is more precise and less error-prone than the equality operator:
+
+   ```javascript
+   console.log(5 === "5"); // false (different types)
+   console.log(true === 1); // false (different types)
+   console.log(null === undefined); // false (different types)
+   ```
+
+   Using the strict equality operator is generally considered a best practice because it helps avoid unexpected behavior caused by type coercion.
+
+In summary:
+
+- `==` performs type coercion and compares values after attempting to convert them to the same type.
+- `===` compares both values and types without type coercion.
+
+When working with JavaScript, it's recommended to use `===` (strict equality) as much as possible, as it provides more predictable and less error-prone results. It helps you avoid the pitfalls associated with type coercion and produces more consistent and reliable code.
+
 # Memory Management in JavaScript 
 
 In the provided code, you're working with variables and objects, and it showcases the behavior of primitive values and reference values in JavaScript. Let's go through each part step by step:
