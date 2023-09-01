@@ -25,3 +25,5 @@ let x = Date.now();
 ```
 
 You are using the `Date.now()` method to get the current timestamp in milliseconds and assign it to the variable `x`. `Date` is both a constructor for creating `Date` objects and a namespace that contains static methods like `now()`.
+
+### its not complete yet , its complex topic , we will understand it later ............
