@@ -36,7 +36,7 @@ In summary, while both operators use the `...` syntax, they serve different purp
 
 #### its so confusing man , i cant acces using kcn , even though kcn is my functionname:(
 
-   I understand the confusion. In JavaScript, the name given to a function within a function expression (like `kcn` in your example) is typically used for internal referencing within the function itself and is not accessible from outside the function expression. 
+  lets discuss the confusion. In JavaScript, the name given to a function within a function expression (like `kcn` in your example) is typically used for internal referencing within the function itself and is not accessible from outside the function expression. 
 
 So, in your code:
 
