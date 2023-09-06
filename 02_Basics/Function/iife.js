@@ -23,3 +23,5 @@ console.log(myFun);//here also the semicolon is important ,  try it without givi
 const myFun2 = (function(name) {
    console.log("Hello, your db is connected " + name);
 })("krushna"); 
+
+//iife ( immediately invoked function expression)
