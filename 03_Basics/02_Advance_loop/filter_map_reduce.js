@@ -42,4 +42,5 @@ const books = [
 
   })
 
-   console.log(userBooks);
+  const userBooks2 = books.filter((boook)=>(boook.publish > 2000))//if you want to return only one value then you can use this syntax.parenthesis is optionalfor book.publish > 2000.it is used for more readability.
+  console.log(userBooks);
