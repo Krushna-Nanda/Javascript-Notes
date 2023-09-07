@@ -330,4 +330,4 @@ Let's discuss the concepts of `filter`, `map`, and `reduce` in JavaScript. These
    // evenNumbers will contain [2, 4]
    ```
 
->>>>>A predicate function, in the context of the filter method or similar operations, is a function that tests a specific condition or criteria and returns either true or false based on whether the condition is met for a given element. In other words, it's a function that determines whether an element should be included in the filtered result.
+>>>>>A `predicate` function, in the context of the filter method or similar operations, is a function that tests a specific condition or criteria and returns either true or false based on whether the condition is met for a given element. In other words, it's a function that determines whether an element should be included in the filtered result.
