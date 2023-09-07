@@ -43,7 +43,7 @@ myNewArr.forEach((value,index,myNewArr)=>{//it also handle the array of  objects
 })
 
 
-
+//for each loop is not return anything. it return undefined.
 
 
 
