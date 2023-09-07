@@ -331,3 +331,10 @@ Let's discuss the concepts of `filter`, `map`, and `reduce` in JavaScript. These
    ```
 
 >>`A predicate function, in the context of the filter method or similar operations, is a function that tests a specific condition or criteria and returns either true or false based on whether the condition is met for a given element. In other words, it's a function that determines whether an element should be included in the filtered result.`
+```
+const numbers = [1, 2, 3, 4, 5];
+const evenNumbers = numbers.filter((num) => num % 2 === 0);
+```
+>The predicate function is (num) => num % 2 === 0. It takes each num (element) from the numbers array and checks if it's even (the condition num % 2 === 0 returns true for even numbers and false for odd numbers). If the condition is true, the element is included in the evenNumbers array; otherwise, it's excluded.
+
+So, in this case, the predicate function tests whether a number is even, and only even numbers are included in the evenNumbers array as a result of the filter operation.
