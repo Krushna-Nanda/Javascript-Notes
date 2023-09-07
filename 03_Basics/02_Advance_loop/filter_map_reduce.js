@@ -59,7 +59,7 @@ const books = [
   */
 
 
-  /*
+/*
 
 
 //=======================================+++++++++++++++===============================
@@ -68,16 +68,16 @@ const books = [
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9,10];
 
 const myMapArr = arr.map((num)=>{
-    // console.log(num);
-     return num*2; 
- })
+  // console.log(num);
+   return num*2; 
+})
 
 //  console.log(myMapArr);
 
 
 //function chaining using map and filter
 
- const mixMapFilter = arr.map((num)=> num*10).map((num)=> num+5).filter(function(num){return num>50})
+const mixMapFilter = arr.map((num)=> num*10).map((num)=> num+5).filter(function(num){return num>50})
 
 // console.log(mixMapFilter);
 console.log(mixMapFilter);
@@ -87,5 +87,77 @@ console.log(mixMapFilter);
 
 
 //Reduce function 
+
+const initialvalue = 0;
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//shoretr version {const myReduceArr = arr.reduce((accumulator , currentvalue)=>  accumulator + currentvalue,initialvalue)}
+const myReduceArr = arr.reduce((accumulator, currentvalue) => {
+
+    // console.log(accumulator, currentvalue);
+    return accumulator + currentvalue;
+
+}, initialvalue)
+
+//  console.log(myReduceArr);
+
+/*
+
+try it yourself
+
+const myReduceArr = arr.reduce((accumulator, currentvalue,x,y,z,a,b) => {
+
+    console.log(accumulator, currentvalue,x,y,z,a,b);
+    return accumulator + currentvalue;
+
+}, initialvalue)
+
+
+*/
+
+const shoppingCart = [
+    {
+        itemName: "js course",
+        price: 2999
+    },
+    {
+        itemName: "js course",
+        price: 3999
+    },
+    {
+        itemName: "js course",
+        price: 4999
+    },
+    {
+        itemName: "py course",
+        price: 999
+    },
+    {
+        itemName: "mobile dev course",
+        price: 5999
+    },
+    {
+        itemName: "data science course",
+        price: 12999
+    },
+]
+
+let product = "js course"
+
+const total = shoppingCart.reduce((accumulator , currentvalue)=>{
+
+    if(currentvalue.itemName === "js course"){
+        console.log(`acc. ${accumulator}  curr ${currentvalue.price}`);
+        return accumulator+currentvalue.price
+    }
+
+    return accumulator;// because if you don't return accumulator then it will return undefined and then it will add undefined with currentvalue.price and then it will return NaN.
+  
+
+},0)
+
+console.log("total price of js course is " + total );
+
+
 
 

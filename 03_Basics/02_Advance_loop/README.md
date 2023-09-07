@@ -498,4 +498,71 @@ Here's a breakdown of the roles:
 So, you can focus on defining the logic inside the callback function (how to use `acc` and `curr`) and trust that the higher-order function will handle the mechanics of passing values between them during the iteration. This abstraction simplifies the code and makes it easier to work with arrays in JavaScript.
 
 
+#### whats wrong with this code ?
+
+```javascript
+
+let product = "js course"
+
+const total = shoppingCart.reduce((accumulator , currentvalue)=>{
+
+    if(currentvalue.itemName === "js course"){
+        console.log(`acc. ${accumulator}  curr ${currentvalue.price}`);
+        return accumulator+currentvalue.price
+    }
+
+},0)
+
+console.log("total price of js course is " + total );
+
+it print undefined why ?
+
+``` 
+
+The issue with your code is that the `reduce` callback function must return a value in all cases. In your code, the callback only returns a value when `currentvalue.itemName === "js course"`, and it doesn't return anything otherwise. This leads to `undefined` being returned for the cases when the condition is not met.
+
+To fix this issue, you should make sure that the callback function returns the accumulator in all cases, even when the condition is not met. You can do this by adding a `return accumulator;` statement outside of the `if` condition. Here's the corrected code:
+
+```javascript
+const shoppingCart = [
+    {
+        itemName: "js course",
+        price: 2999
+    },
+    {
+        itemName: "js course",
+        price: 3999
+    },
+    {
+        itemName: "js course",
+        price: 4999
+    },
+    {
+        itemName: "py course",
+        price: 999
+    },
+    {
+        itemName: "mobile dev course",
+        price: 5999
+    },
+    {
+        itemName: "data science course",
+        price: 12999
+    },
+];
+
+let product = "js course";
+
+const total = shoppingCart.reduce((accumulator, currentValue) => {
+    if (currentValue.itemName === product) {
+        console.log(`acc. ${accumulator}  curr ${currentValue.price}`);
+        return accumulator + currentValue.price;
+    }
+    return accumulator; // Return the accumulator even if the condition is not met
+}, 0);
+
+console.log("total price of js course is " + total);
+```
+
+With this change, the `reduce` function will always return a value, and the total price of "js course" will be correctly calculated and printed.
 
