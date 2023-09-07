@@ -338,3 +338,53 @@ const evenNumbers = numbers.filter((num) => num % 2 === 0);
 >The predicate function is (num) => num % 2 === 0. It takes each num (element) from the numbers array and checks if it's even (the condition num % 2 === 0 returns true for even numbers and false for odd numbers). If the condition is true, the element is included in the evenNumbers array; otherwise, it's excluded.
 
 So, in this case, the predicate function tests whether a number is even, and only even numbers are included in the evenNumbers array as a result of the filter operation.
+# ===================================
+### Some Fundamentals 
+
+No, you cannot access the properties of objects within the `myNewArr` array using `myNewArr.name` because `myNewArr` is an array of objects, not a single object. To access the properties of objects within the array, you need to specify an index to access a specific object and then use dot notation or bracket notation to access the properties of that object.
+
+For example, to access the `name` property of the first object in the array, you can do the following:
+
+```javascript
+const firstObject = myNewArr[0];
+const firstName = firstObject.name;
+console.log(firstName); // This will log "krushna"
+```
+
+Alternatively, you can chain the access in a single line like this:
+
+```javascript
+const firstName = myNewArr[0].name;
+console.log(firstName); // This will also log "krushna"
+```
+
+Similarly, you can access properties of other objects in the array by specifying the appropriate index (0, 1, 2, etc.) within square brackets `[index]` and then using dot notation to access the properties of each object.
+
+```
+const myNewArr = [
+    {
+        name:"krushna",
+        age:23,
+    },
+    {
+        name:"kumar",
+        age:23,
+    }
+];
+
+myNewArr.forEach((value,index,myNewArr)=>{//it also handle the array of  objects.like above example.
+
+ console.log(value.name);
+})
+
+here in this case how value acces the properties without usaing "[0]"  this type of index.
+
+```
+
+In the `forEach` method callback, the `value` parameter represents each element of the `myNewArr` array one by one as it iterates through the array. Since `myNewArr` is an array of objects, each `value` in this context refers to one of those objects.
+
+When you access `value.name`, you are using dot notation to access the `name` property of the current object. In each iteration of the `forEach` loop, `value` is set to the current object in the array, and `value.name` is used to access the `name` property of that specific object.
+
+So, in your code, `value.name` allows you to access the `name` property of each object within the array without the need for `[0]` or an index. The `forEach` loop handles this iteration for you, providing each object in the array as `value` during each iteration.
+
+# ===================================
