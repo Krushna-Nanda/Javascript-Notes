@@ -1,3 +1,6 @@
+/*
+
+
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 //filter function is return the array of filtered values.
 
@@ -51,3 +54,35 @@ const books = [
   const userBooks3  = books.filter((book)=>(book.publish>1995 && book.genre === 'History'))
 
   console.log(userBooks3);
+
+
+  */
+
+
+  /*
+
+
+//=======================================+++++++++++++++===============================
+//from here we are going to discuss about Map function
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9,10];
+
+const myMapArr = arr.map((num)=>{
+    // console.log(num);
+     return num*2; 
+ })
+
+//  console.log(myMapArr);
+
+
+//function chaining using map and filter
+
+ const mixMapFilter = arr.map((num)=> num*10).map((num)=> num+5).filter(function(num){return num>50})
+
+// console.log(mixMapFilter);
+console.log(mixMapFilter);
+
+
+*/
+
+
