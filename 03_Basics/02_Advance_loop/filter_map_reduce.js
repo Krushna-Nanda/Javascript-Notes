@@ -86,3 +86,6 @@ console.log(mixMapFilter);
 */
 
 
+//Reduce function 
+
+
