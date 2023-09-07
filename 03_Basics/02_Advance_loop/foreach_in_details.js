@@ -36,10 +36,14 @@ const myNewArr = [
 
 ];
 
-myNewArr.forEach((value,index,myNewArr)=>{
+myNewArr.forEach((value,index,myNewArr)=>{//it also handle the array of  objects.like above example.
 
-    console.log(index,value.name,value.age);
+// console.log(index,value.name,value.age);
 
 })
+
+
+
+
 
 
