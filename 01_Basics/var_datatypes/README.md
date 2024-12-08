@@ -105,7 +105,7 @@ function varExample() {
 }
 
 varExample();
-```
+
 
 #### `let`
 - **Scope**: Block-scoped.
@@ -126,7 +126,7 @@ function letExample() {
 }
 
 letExample();
-```
+
 
 ```
 
