@@ -82,6 +82,54 @@ In JavaScript, there are three main ways to declare a variable: using the `var` 
 
 These are the main ways to declare variables in JavaScript. It's recommended to use `let` and `const` for variable declarations, as they provide better control over scoping and reassignment. The use of `var` is becoming less common due to its hoisting behavior and lack of block scoping.
 
+```
+### Summary of `var` vs `let` in JavaScript
+
+#### `var`
+- **Scope**: Function-scoped.
+- **Hoisting**: Variables declared with `var` are hoisted and initialized with `undefined`.
+- **Re-declaration**: Allows re-declaration of the same variable within the same scope.
+
+**Example with `var`**:
+```javascript
+function varExample() {
+    console.log(a); // Output: undefined (due to hoisting)
+    var a = 20;
+
+    if (true) {
+        var a = 30; // Re-declares and modifies the same variable
+        console.log(a); // Output: 30
+    }
+
+    console.log(a); // Output: 30 (same variable modified inside the block)
+}
+
+varExample();
+```
+
+#### `let`
+- **Scope**: Block-scoped.
+- **Hoisting**: Variables declared with `let` are hoisted but not initialized (temporal dead zone).
+- **Re-declaration**: Does not allow re-declaration within the same scope.
+
+**Example with `let`**:
+```javascript
+function letExample() {
+    let a = 20;
+
+    if (true) {
+        let a = 30; // Declares a new variable within the block scope
+        console.log(a); // Output: 30
+    }
+
+    console.log(a); // Output: 20 (original variable outside the block)
+}
+
+letExample();
+```
+
+```
+
 # ----------------------------------------
 
 ## Dynamic Typing in JavaScript
