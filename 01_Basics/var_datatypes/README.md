@@ -82,15 +82,16 @@ In JavaScript, there are three main ways to declare a variable: using the `var` 
 
 These are the main ways to declare variables in JavaScript. It's recommended to use `let` and `const` for variable declarations, as they provide better control over scoping and reassignment. The use of `var` is becoming less common due to its hoisting behavior and lack of block scoping.
 
-```
-Summary of `var` vs `let` in JavaScript
 
-`var`
-- Scope: Function-scoped.
-- Hoisting: Variables declared with `var` are hoisted and initialized with `undefined`.
-- Re-declaration: Allows re-declaration of the same variable within the same scope.
+### Summary of `var` vs `let` in JavaScript  
 
-Example with `var`:
+#### **`var`**  
+- **Scope:** Function-scoped.  
+- **Hoisting:** Variables declared with `var` are hoisted and initialized with `undefined`.  
+- **Re-declaration:** Allows re-declaration of the same variable within the same scope.  
+
+**Example with `var`:**  
+```javascript
 function varExample() {
     console.log(a); // Output: undefined (due to hoisting)
     var a = 20;
@@ -102,15 +103,18 @@ function varExample() {
 
     console.log(a); // Output: 30 (same variable modified inside the block)
 }
-
 varExample();
+```
 
-`let`
-- Scope: Block-scoped.
-- Hoisting: Variables declared with `let` are hoisted but not initialized (temporal dead zone).
-- Re-declaration: Does not allow re-declaration within the same scope.
+---
 
-Example with `let`:
+#### **`let`**  
+- **Scope:** Block-scoped.  
+- **Hoisting:** Variables declared with `let` are hoisted but not initialized (Temporal Dead Zone).  
+- **Re-declaration:** Does not allow re-declaration within the same scope.  
+
+**Example with `let`:**  
+```javascript
 function letExample() {
     let a = 20;
 
@@ -121,12 +125,26 @@ function letExample() {
 
     console.log(a); // Output: 20 (original variable outside the block)
 }
-
 letExample();
-
-
-
 ```
+
+---
+
+### Key Differences:
+1. **Scope:**  
+   - `var` is function-scoped.  
+   - `let` is block-scoped.  
+
+2. **Hoisting:**  
+   - `var` is hoisted and initialized with `undefined`.  
+   - `let` is hoisted but uninitialized, causing a **Temporal Dead Zone (TDZ)** error if accessed before declaration.  
+
+3. **Re-declaration:**  
+   - `var` allows re-declaration in the same scope.  
+   - `let` does not allow re-declaration in the same scope.  
+
+
+
 
 # ----------------------------------------
 
