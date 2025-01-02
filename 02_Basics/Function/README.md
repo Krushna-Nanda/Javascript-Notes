@@ -587,3 +587,55 @@ Both higher-order functions and callbacks are essential tools in JavaScript for 
 ---
 
 I hope this summary clarifies both higher-order functions and callback functions! Let me know if you have any further questions or need more examples!
+
+
+The issue with your code is that you are **defining** and **invoking** anonymous functions incorrectly. Here's the breakdown:
+
+### Problem in your code:
+```javascript
+function (a) {
+  console.log(a);
+}
+
+function (10);
+```
+
+- You are trying to define a function, but there’s no function name for it. In JavaScript, **functions must have a name** if they are to be declared normally (unless you're using an **anonymous function** in an expression, but that still requires context).
+- The second part, `function(10)`, tries to **invoke** a function, but it doesn't specify which function to invoke.
+
+### Correct way to define and invoke a function:
+
+1. **Named Function Declaration**:
+
+You should provide a name for the function if you're using a function declaration:
+
+```javascript
+function print(a) {
+  console.log(a);
+}
+
+print(10);  // Correct way to invoke the function
+```
+
+- Here, the function is named `print`, and you invoke it by calling `print(10)`.
+
+2. **Anonymous Function in Expression**:
+
+Alternatively, if you want to use an **anonymous function**, you need to assign it to a variable or use it directly in an expression (like inside a callback or event handler):
+
+```javascript
+const print = function(a) {
+  console.log(a);
+};
+
+print(10);  // Invoking the anonymous function
+```
+
+- In this case, `print` is a variable that holds the reference to the anonymous function, and you can invoke it using `print(10)`.
+
+### Key Points:
+- **Function Declaration** requires a name (e.g., `print(a)`).
+- **Anonymous Functions** can be assigned to variables or used directly in expressions.
+- You can't just define an anonymous function without assigning it to a variable or using it as a callback.
+
+Let me know if you'd like further clarification!
