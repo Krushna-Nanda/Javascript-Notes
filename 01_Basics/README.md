@@ -48,3 +48,7 @@ In this example, the function `sayHello` is hoisted, so it can be called before 
   - Function declarations are hoisted entirely.
 
 Hoisting allows for flexible code writing but understanding its nuances helps avoid potential pitfalls.
+
+```
+hoisting is not possible with arrow function , in arrow function this refers to global window object
+```
