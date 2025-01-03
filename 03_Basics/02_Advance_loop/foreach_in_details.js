@@ -86,4 +86,44 @@ hello("krushna","chandra " , 20 );
 */
 
 
+// ways you cann call for each fun on array
+
+/*
+
+const my_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,"krushna"];
+
+const printNumber = (val) => {
+
+    console.log(val);
+    
+
+}
+
+my_arr.forEach(printNumber)
+
+
+*/
+
+/*
+
+const my_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,"krushna"];
+
+const printNumber = (val , index , arr) => {
+
+    console.log(val , "," , `index no ${index}` , arr );
+    
+
+}
+
+my_arr.forEach(printNumber)
+
+*/
+
+/*
+
+const my_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,"krushna"];
+my_arr.forEach((val)=>console.log(val));
+
+*/
+
 
