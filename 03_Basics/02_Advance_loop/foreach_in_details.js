@@ -48,5 +48,42 @@ myNewArr.forEach((value,index,myNewArr)=>{//it also handle the array of  objects
 
 //for each loop is not return anything. it return undefined.
 
+# ---------------------------------------------------------------------------------
+
+    /*
+
+Why forEach1 is suggested: Once you add forEach1 to Array.prototype, 
+it becomes a method of all arrays, so the editor suggests it 
+just like the built-in forEach method.
+
+*/
+
+const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+Array.prototype.forEach1 = function(callback) {
+    for (let i = 0; i < this.length; i++) {
+        callback(this[i]); // Pass current element, index, and array
+    }
+};
+
+function printNumber(num) {
+    console.log(num);
+}
+
+number.forEach1(printNumber); // Output: 1 2 3 4 5 6 7 8 9 10
+
+
+
+/*
+
+function hello (a){
+    console.log(a);
+}
+
+hello("krushna","chandra " , 20 ); 
+
+
+*/
+
 
 
