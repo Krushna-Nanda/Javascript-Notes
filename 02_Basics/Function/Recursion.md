@@ -1,7 +1,7 @@
 # 1st code // there is something wrong in this code // recusrsion
 
 
-```
+```javascript
 let min = 1;
 let max  = 1;
 
