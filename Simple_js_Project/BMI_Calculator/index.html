@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bmi calculator</title>
+    <style>
+        span {
+            display: block;
+            font-weight: bolder;
+            margin-top: 10px;
+            padding: 20px;
+            text-align: center;
+            font-size: 30px;
+
+        }
+
+        .calculator {
+            margin: auto;
+            text-align: center;
+            height: 500px;
+            width: 400px;
+            border: 6px solid black;
+        }
+
+        input {
+            padding: 10px;
+            border: 4px solid black;
+            margin-top: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <span> weight in (kg) </span>
+        <input type="number" id="weight">
+        <span>Height in (M)</span>
+        <input type="number" id="height">
+        <br>
+        <input type="button" value="Calculate" id="button">
+        <span id="result"></span>
+    </div>
+</body>
+<script>
+    document.querySelector("#button").addEventListener("click", function () {
+
+        let weight = parseFloat(document.querySelector("#weight").value);
+        let height = parseFloat(document.querySelector("#height").value);
+
+        if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+            document.querySelector("#result").innerHTML = ` please enter a valid width and height `;
+            document.querySelector("#result").style.color = ` red `;
+            return;
+
+        }
+
+        let bmi = (weight / (height * height)).toFixed(2)
+        document.querySelector("#result").innerHTML = ` Your BMI = ${bmi} `;
+        document.querySelector("#result").style.color = ` black `;
+
+    })
+
+</script>
+
+</html>

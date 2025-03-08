@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color_child{
+
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+            margin: 2px;
+            display: inline-block;
+            color: black;
+            font-size: larger;
+            font-weight: bolder;
+
+        }
+        #red{
+            background-color: red;
+        }
+        #green{
+            background-color: green;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #aqua{
+            background-color: aqua;
+        }
+        #orange{
+            background-color: orange;
+        }
+        #grey{
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="color_child" id="red">red</div>
+        <div class="color_child" id="green">green</div>
+        <div class="color_child" id="yellow">yellow</div>
+        <div class="color_child" id="aqua">aqua</div>
+        <div class="color_child" id="orange">orange</div>
+        <div class="color_child" id="grey">grey</div>
+    </div>
+</body>
+<script>
+/*
+
+document.getElementById("red").addEventListener("click",colorchanger)
+document.getElementById("green").addEventListener("click",colorchanger)
+document.getElementById("yellow").addEventListener("click",colorchanger)
+document.getElementById("aqua").addEventListener("click",colorchanger)
+
+
+
+
+   function colorchanger (event) {
+    document.body.style.backgroundColor = event.target.id
+    }
+
+*/
+
+// more optimized or alternative way
+
+document.querySelector(".parent").addEventListener("click", colorChanger);
+
+function colorChanger(event) {
+ 
+        document.body.style.backgroundColor = event.target.id;
+    
+}
+
+
+
+</script>
+</html>
